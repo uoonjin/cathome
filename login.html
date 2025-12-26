@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 - CatHome</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <header id="header">
+    <!-- 상단 공지 바 -->
+    <div class="notice-wrap">
+      <ul>
+        <li><a href="#">이번 주 할인 이벤트 모아보기</a></li>
+      </ul>
+    </div>
+
+    <!-- 헤더 메인 -->
+    <div class="inner-wrap">
+      <div class="header-top">
+        <!-- 로고 -->
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="img/logo_ko.png" alt="CatHome">
+          </a>
+        </h1>
+
+        <!-- 검색 박스 -->
+        <div class="search-box">
+          <input type="text" placeholder="어떤 상품을 찾으세요?">
+          <button type="submit">검색</button>
+        </div>
+
+        <!-- 상단 메뉴 (로그인, 장바구니 등) -->
+        <div class="top-menu">
+          <a href="login.html">로그인</a>
+          <a href="#">장바구니</a>
+          <a href="#">마이페이지</a>
+        </div>
+      </div>
+
+      <!-- 메인 네비게이션 -->
+      <nav id="gnb">
+        <ul>
+          <li><a href="#">카테고리</a></li>
+          <li><a href="#">핫딜</a></li>
+          <li><a href="#">신상품</a></li>
+          <li><a href="#">랭킹</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">체험단</a></li>
+          <li><a href="board.html">집사 커뮤니티</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 컨텐츠 -->
+  <main id="main">
+    <section id="login-section">
+      <div class="inner-wrap">
+        <h2 class="page-title">로그인</h2>
+
+        <!-- 로그인 폼 -->
+        <div class="login-wrap">
+          <form id="login-form">
+            <div class="input-group">
+              <label for="email">이메일</label>
+              <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+            </div>
+            <div class="input-group">
+              <label for="password">비밀번호</label>
+              <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+            </div>
+            <button type="submit" class="btn-login">로그인</button>
+          </form>
+
+          <!-- 부가 링크 -->
+          <div class="login-links">
+            <a href="#">아이디 찾기</a>
+            <a href="#">비밀번호 찾기</a>
+            <a href="#" id="btn-signup">회원가입</a>
+          </div>
+        </div>
+
+        <!-- 회원가입 폼 (기본 숨김) -->
+        <div class="signup-wrap" style="display: none;">
+          <h3>회원가입</h3>
+          <form id="signup-form">
+            <div class="input-group">
+              <label for="signup-email">이메일</label>
+              <input type="email" id="signup-email" name="email" placeholder="이메일을 입력하세요" required>
+            </div>
+            <div class="input-group">
+              <label for="signup-password">비밀번호</label>
+              <input type="password" id="signup-password" name="password" placeholder="비밀번호를 입력하세요" required>
+            </div>
+            <div class="input-group">
+              <label for="signup-password-confirm">비밀번호 확인</label>
+              <input type="password" id="signup-password-confirm" name="password-confirm" placeholder="비밀번호를 다시 입력하세요" required>
+            </div>
+            <div class="input-group">
+              <label for="signup-nickname">닉네임</label>
+              <input type="text" id="signup-nickname" name="nickname" placeholder="닉네임을 입력하세요" required>
+            </div>
+            <button type="submit" class="btn-signup">회원가입</button>
+          </form>
+
+          <div class="signup-links">
+            <a href="#" id="btn-back-login">로그인으로 돌아가기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer id="footer">
+    <div class="inner-wrap">
+      <div class="footer-logo">
+        <img src="img/logo_ko.png" alt="CatHome">
+      </div>
+      <div class="footer-link">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+        <a href="#">입점 및 제휴 문의</a>
+        <a href="#">사이트맵</a>
+      </div>
+      <div class="footer-info">
+        <p>주소: 서울특별시 강남구 테헤란로 123</p>
+        <p>대표: 홍길동 | 사업자등록번호: 123-45-67890</p>
+        <p>Tel: 1234-5678 | Email: support@cathome.com</p>
+      </div>
+    </div>
+    <div class="sns">
+      <a href="#">페이스북</a>
+      <a href="#">인스타그램</a>
+      <a href="#">유튜브</a>
+    </div>
+  </footer>
+
+  <!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  // 로그인 폼 처리
+  const loginForm = document.getElementById('login-form');
+  const signupForm = document.getElementById('signup-form');
+  const loginWrap = document.querySelector('.login-wrap');
+  const signupWrap = document.querySelector('.signup-wrap');
+  const btnSignup = document.getElementById('btn-signup');
+  const btnBackLogin = document.getElementById('btn-back-login');
+
+  // 회원가입 폼 보기
+  btnSignup.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginWrap.style.display = 'none';
+    signupWrap.style.display = 'block';
+  });
+
+  // 로그인 폼으로 돌아가기
+  btnBackLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    signupWrap.style.display = 'none';
+    loginWrap.style.display = 'block';
+  });
+
+  // 로그인 처리
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const result = await signIn(email, password);
+
+    if (result.success) {
+      alert(result.message);
+      window.location.href = 'index.html';
+    } else {
+      alert('로그인 실패: ' + result.message);
+    }
+  });
+
+  // 회원가입 처리
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+    const passwordConfirm = document.getElementById('signup-password-confirm').value;
+    const nickname = document.getElementById('signup-nickname').value;
+
+    // 비밀번호 확인
+    if (password !== passwordConfirm) {
+      alert('비밀번호가 일치하지 않습니다.');
+      return;
+    }
+
+    // 비밀번호 길이 체크
+    if (password.length < 6) {
+      alert('비밀번호는 6자 이상이어야 합니다.');
+      return;
+    }
+
+    const result = await signUp(email, password, nickname);
+
+    if (result.success) {
+      alert(result.message);
+      // 로그인 폼으로 전환
+      signupWrap.style.display = 'none';
+      loginWrap.style.display = 'block';
+    } else {
+      alert('회원가입 실패: ' + result.message);
+    }
+  });
+
+  // 이미 로그인된 상태면 메인으로 이동
+  (async () => {
+    const user = await getCurrentUser();
+    if (user) {
+      window.location.href = 'index.html';
+    }
+  })();
+</script>
+</body>
+</html>

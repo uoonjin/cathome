@@ -1,0 +1,18 @@
+# 환경 변수
+.env
+.env.local
+.env.production
+
+# 참조 파일
+ref/
+
+# 운영체제 파일
+.DS_Store
+Thumbs.db
+
+# IDE 설정
+.vscode/
+.idea/
+
+# 노드 모듈
+node_modules/

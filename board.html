@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>집사 커뮤니티 - CatHome</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <header id="header">
+    <!-- 상단 공지 바 -->
+    <div class="notice-wrap">
+      <ul>
+        <li><a href="#">이번 주 할인 이벤트 모아보기</a></li>
+      </ul>
+    </div>
+
+    <!-- 헤더 메인 -->
+    <div class="inner-wrap">
+      <div class="header-top">
+        <!-- 로고 -->
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="img/logo_ko.png" alt="CatHome">
+          </a>
+        </h1>
+
+        <!-- 검색 박스 -->
+        <div class="search-box">
+          <input type="text" placeholder="어떤 상품을 찾으세요?">
+          <button type="submit">검색</button>
+        </div>
+
+        <!-- 상단 메뉴 (로그인, 장바구니 등) -->
+        <div class="top-menu">
+          <a href="login.html">로그인</a>
+          <a href="#">장바구니</a>
+          <a href="#">마이페이지</a>
+        </div>
+      </div>
+
+      <!-- 메인 네비게이션 -->
+      <nav id="gnb">
+        <ul>
+          <li><a href="#">카테고리</a></li>
+          <li><a href="#">핫딜</a></li>
+          <li><a href="#">신상품</a></li>
+          <li><a href="#">랭킹</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">체험단</a></li>
+          <li><a href="board.html" class="active">집사 커뮤니티</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 컨텐츠 -->
+  <main id="main">
+    <section id="board-section">
+      <div class="inner-wrap">
+        <h2 class="page-title">집사 커뮤니티</h2>
+
+        <!-- 검색 영역 -->
+        <div class="board-search">
+          <input type="text" id="search-input" placeholder="검색어를 입력해주세요.">
+          <button type="button" id="search-btn">검색</button>
+        </div>
+
+        <!-- 글쓰기 버튼 -->
+        <div class="board-actions">
+          <button type="button" id="write-btn">글쓰기</button>
+        </div>
+
+        <!-- 게시판 목록 -->
+        <div class="board-list">
+          <table>
+            <thead>
+              <tr>
+                <th class="col-num">번호</th>
+                <th class="col-title">제목</th>
+                <th class="col-name">이름</th>
+                <th class="col-id">아이디</th>
+                <th class="col-date">작성일</th>
+                <th class="col-views">조회수</th>
+              </tr>
+            </thead>
+            <tbody id="board-tbody">
+              <!-- 게시글 목록이 JavaScript로 렌더링됩니다 -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 페이지네이션 -->
+        <div class="pagination">
+          <a href="#" class="prev">이전</a>
+          <span class="page-info">1 page / 1 pages</span>
+          <a href="#" class="next">다음</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 글쓰기 폼 (기본 숨김) -->
+    <section id="write-section" style="display: none;">
+      <div class="inner-wrap">
+        <h2 class="page-title">글쓰기</h2>
+
+        <form id="post-form">
+          <div class="input-group">
+            <label for="post-title">제목</label>
+            <input type="text" id="post-title" name="title" placeholder="제목을 입력하세요" required>
+          </div>
+          <div class="input-group">
+            <label for="post-content">내용</label>
+            <textarea id="post-content" name="content" placeholder="내용을 입력하세요" rows="10" required></textarea>
+          </div>
+          <div class="input-group">
+            <label for="post-image">이미지</label>
+            <input type="file" id="post-image" name="image" accept="image/*">
+            <div id="image-preview"></div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">등록</button>
+            <button type="button" class="btn-cancel" id="cancel-btn">취소</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 게시글 상세보기 (기본 숨김) -->
+    <section id="detail-section" style="display: none;">
+      <div class="inner-wrap">
+        <article class="post-detail">
+          <header class="post-header">
+            <h2 class="post-title">게시글 제목</h2>
+            <div class="post-meta">
+              <span class="post-author">작성자: 홍길동</span>
+              <span class="post-date">작성일: 2022-08-26</span>
+              <span class="post-views">조회수: 40</span>
+            </div>
+          </header>
+          <div class="post-content">
+            <p>게시글 내용이 여기에 표시됩니다.</p>
+            <div class="post-image">
+              <!-- 이미지가 있을 경우 표시 -->
+            </div>
+          </div>
+          <div class="post-actions">
+            <button type="button" class="btn-edit">수정</button>
+            <button type="button" class="btn-delete">삭제</button>
+            <button type="button" class="btn-list">목록</button>
+          </div>
+        </article>
+
+        <!-- 댓글 영역 -->
+        <div class="comment-section">
+          <h3>댓글</h3>
+
+          <!-- 댓글 작성 폼 -->
+          <form id="comment-form">
+            <textarea id="comment-content" placeholder="댓글을 입력하세요" rows="3"></textarea>
+            <button type="submit">댓글 등록</button>
+          </form>
+
+          <!-- 댓글 목록 -->
+          <ul class="comment-list" id="comment-list">
+            <li class="comment-item">
+              <div class="comment-header">
+                <span class="comment-author">작성자</span>
+                <span class="comment-date">2022-08-26</span>
+              </div>
+              <p class="comment-content">댓글 내용입니다.</p>
+              <button type="button" class="btn-comment-delete">삭제</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer id="footer">
+    <div class="inner-wrap">
+      <div class="footer-logo">
+        <img src="img/logo_ko.png" alt="CatHome">
+      </div>
+      <div class="footer-link">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+        <a href="#">입점 및 제휴 문의</a>
+        <a href="#">사이트맵</a>
+      </div>
+      <div class="footer-info">
+        <p>주소: 서울특별시 강남구 테헤란로 123</p>
+        <p>대표: 홍길동 | 사업자등록번호: 123-45-67890</p>
+        <p>Tel: 1234-5678 | Email: support@cathome.com</p>
+      </div>
+    </div>
+    <div class="sns">
+      <a href="#">페이스북</a>
+      <a href="#">인스타그램</a>
+      <a href="#">유튜브</a>
+    </div>
+  </footer>
+
+  <!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/board.js"></script>
+</body>
+</html>

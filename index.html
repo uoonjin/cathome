@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CatHome - 고양이 쇼핑몰</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <header id="header">
+    <!-- 상단 공지 바 -->
+    <div class="notice-wrap">
+      <ul>
+        <li><a href="#">이번 주 할인 이벤트 모아보기</a></li>
+      </ul>
+    </div>
+
+    <!-- 헤더 메인 -->
+    <div class="inner-wrap">
+      <div class="header-top">
+        <!-- 로고 -->
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="img/logo_ko.png" alt="CatHome">
+          </a>
+        </h1>
+
+        <!-- 검색 박스 -->
+        <div class="search-box">
+          <input type="text" placeholder="어떤 상품을 찾으세요?">
+          <button type="submit">검색</button>
+        </div>
+
+        <!-- 상단 메뉴 (로그인, 장바구니 등) -->
+        <div class="top-menu">
+          <a href="login.html">로그인</a>
+          <a href="#">장바구니</a>
+          <a href="#">마이페이지</a>
+        </div>
+      </div>
+
+      <!-- 메인 네비게이션 -->
+      <nav id="gnb">
+        <ul>
+          <li><a href="#">카테고리</a></li>
+          <li><a href="#">핫딜</a></li>
+          <li><a href="#">신상품</a></li>
+          <li><a href="#">랭킹</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">체험단</a></li>
+          <li><a href="board.html">집사 커뮤니티</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 컨텐츠 -->
+  <main id="main">
+    <!-- 메인 슬라이드 -->
+    <section id="main-slide">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/main-slide-01.jpg" alt="슬라이드 1">
+            <div class="slide-title">
+              <h2>슬라이드 제목 1</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/main-slide-02.jpg" alt="슬라이드 2">
+            <div class="slide-title">
+              <h2>슬라이드 제목 2</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/main-slide-03.jpg" alt="슬라이드 3">
+            <div class="slide-title">
+              <h2>슬라이드 제목 3</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/main-slide-04.jpg" alt="슬라이드 4">
+            <div class="slide-title">
+              <h2>슬라이드 제목 4</h2>
+            </div>
+          </div>
+        </div>
+        <!-- 슬라이드 네비게이션 -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+    <!-- 카테고리 섹션 -->
+    <section id="sect-category">
+      <!-- 탭 컨테이너 -->
+      <div class="tab-container">
+        <button class="tab active">사료</button>
+        <button class="tab">간식</button>
+        <button class="tab">용품</button>
+      </div>
+
+      <!-- 카테고리 목록 -->
+      <div class="category-wrap">
+        <a href="#" class="sub-category">
+          <img src="img/01-kitten.png" alt="키튼">
+          <span>키튼</span>
+        </a>
+        <a href="#" class="sub-category">
+          <img src="img/02-adult.png" alt="어덜트">
+          <span>어덜트</span>
+        </a>
+        <a href="#" class="sub-category">
+          <img src="img/03-senior.png" alt="시니어">
+          <span>시니어</span>
+        </a>
+        <a href="#" class="sub-category">
+          <img src="img/04-all.png" alt="전연령">
+          <span>전연령</span>
+        </a>
+        <a href="#" class="sub-category">
+          <img src="img/05-dryfeed.png" alt="건식사료">
+          <span>건식사료</span>
+        </a>
+        <a href="#" class="sub-category">
+          <img src="img/06-canfeed.png" alt="주식캔">
+          <span>주식캔</span>
+        </a>
+        <a href="#" class="sub-category">
+          <img src="img/07-pouchfeed.png" alt="파우치">
+          <span>파우치</span>
+        </a>
+        <a href="#" class="sub-category">
+          <img src="img/08-airfeed.png" alt="에어/동결사료">
+          <span>에어/동결사료</span>
+        </a>
+      </div>
+
+      <!-- 채팅 버튼 -->
+      <aside class="aside-chat">
+        <button>1:1 문의</button>
+      </aside>
+    </section>
+
+    <!-- 핫딜 섹션 -->
+    <section id="sect-deal">
+      <div class="inner-wrap">
+        <div class="title-wrap">
+          <h2 class="sect-title">핫딜</h2>
+          <a href="#" class="more">더보기</a>
+        </div>
+
+        <div class="product-slider">
+          <button class="prev">이전</button>
+          <div class="product-list">
+            <article class="product-item">
+              <a href="#">
+                <div class="cont-img">
+                  <img src="img/deal-01.jpg" alt="상품 1">
+                  <span class="deal-date">D-7</span>
+                </div>
+                <div class="cont-txt">
+                  <p class="product-name">상품명 1</p>
+                  <p class="product-price">10,000원</p>
+                </div>
+              </a>
+            </article>
+            <article class="product-item">
+              <a href="#">
+                <div class="cont-img">
+                  <img src="img/deal-02.jpg" alt="상품 2">
+                  <span class="deal-date">D-5</span>
+                </div>
+                <div class="cont-txt">
+                  <p class="product-name">상품명 2</p>
+                  <p class="product-price">15,000원</p>
+                </div>
+              </a>
+            </article>
+            <article class="product-item">
+              <a href="#">
+                <div class="cont-img">
+                  <img src="img/deal-03.jpg" alt="상품 3">
+                  <span class="deal-date">D-3</span>
+                </div>
+                <div class="cont-txt">
+                  <p class="product-name">상품명 3</p>
+                  <p class="product-price">20,000원</p>
+                </div>
+              </a>
+            </article>
+            <article class="product-item">
+              <a href="#">
+                <div class="cont-img">
+                  <img src="img/deal-04.jpg" alt="상품 4">
+                  <span class="deal-date">D-2</span>
+                </div>
+                <div class="cont-txt">
+                  <p class="product-name">상품명 4</p>
+                  <p class="product-price">25,000원</p>
+                </div>
+              </a>
+            </article>
+          </div>
+          <button class="next">다음</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 신상품 섹션 -->
+    <section id="sect-new">
+      <div class="inner-wrap">
+        <div class="title-wrap">
+          <h2 class="sect-title">신상품</h2>
+          <a href="#" class="more">더보기</a>
+        </div>
+
+        <div class="product-slider">
+          <button class="prev">이전</button>
+          <div class="product-list">
+            <article class="product-item">
+              <a href="#">
+                <div class="cont-img">
+                  <img src="img/new-01.png" alt="신상품 1">
+                </div>
+                <div class="cont-txt">
+                  <p class="product-name">신상품명 1</p>
+                  <p class="product-price">12,000원</p>
+                </div>
+              </a>
+            </article>
+            <article class="product-item">
+              <a href="#">
+                <div class="cont-img">
+                  <img src="img/new-02.png" alt="신상품 2">
+                </div>
+                <div class="cont-txt">
+                  <p class="product-name">신상품명 2</p>
+                  <p class="product-price">18,000원</p>
+                </div>
+              </a>
+            </article>
+            <article class="product-item">
+              <a href="#">
+                <div class="cont-img">
+                  <img src="img/new-03.jpg" alt="신상품 3">
+                </div>
+                <div class="cont-txt">
+                  <p class="product-name">신상품명 3</p>
+                  <p class="product-price">22,000원</p>
+                </div>
+              </a>
+            </article>
+            <article class="product-item">
+              <a href="#">
+                <div class="cont-img">
+                  <img src="img/new-04.png" alt="신상품 4">
+                </div>
+                <div class="cont-txt">
+                  <p class="product-name">신상품명 4</p>
+                  <p class="product-price">28,000원</p>
+                </div>
+              </a>
+            </article>
+          </div>
+          <button class="next">다음</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 랭킹 섹션 -->
+    <section id="sect-ranking">
+      <div class="inner-wrap">
+        <div class="title-wrap">
+          <h2 class="sect-title">나캣랭킹</h2>
+          <span class="rank-time">2023.01.21 16:01 기준</span>
+        </div>
+
+        <div class="rank-list">
+          <!-- 1위 (이미지 있음) -->
+          <article class="rank-cont rank-first">
+            <span class="rank-num">1</span>
+            <div class="rank-img">
+              <img src="img/rank-01.jpeg" alt="랭킹 1위">
+            </div>
+            <div class="rank-info">
+              <p class="rank-title">랭킹 1위 상품명</p>
+              <p class="rank-price">32,000원</p>
+            </div>
+          </article>
+          <!-- 2위~10위 -->
+          <article class="rank-cont">
+            <span class="rank-num">2</span>
+            <p class="rank-title">랭킹 2위 상품명</p>
+          </article>
+          <article class="rank-cont">
+            <span class="rank-num">3</span>
+            <p class="rank-title">랭킹 3위 상품명</p>
+          </article>
+          <article class="rank-cont">
+            <span class="rank-num">4</span>
+            <p class="rank-title">랭킹 4위 상품명</p>
+          </article>
+          <article class="rank-cont">
+            <span class="rank-num">5</span>
+            <p class="rank-title">랭킹 5위 상품명</p>
+          </article>
+          <article class="rank-cont">
+            <span class="rank-num">6</span>
+            <p class="rank-title">랭킹 6위 상품명</p>
+          </article>
+          <article class="rank-cont">
+            <span class="rank-num">7</span>
+            <p class="rank-title">랭킹 7위 상품명</p>
+          </article>
+          <article class="rank-cont">
+            <span class="rank-num">8</span>
+            <p class="rank-title">랭킹 8위 상품명</p>
+          </article>
+          <article class="rank-cont">
+            <span class="rank-num">9</span>
+            <p class="rank-title">랭킹 9위 상품명</p>
+          </article>
+          <article class="rank-cont">
+            <span class="rank-num">10</span>
+            <p class="rank-title">랭킹 10위 상품명</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 집사 커뮤니티 섹션 -->
+    <section id="sect-community">
+      <div class="inner-wrap">
+        <div class="title-wrap">
+          <h2 class="sect-title">집사 커뮤니티</h2>
+          <a href="board.html" class="more">더보기</a>
+        </div>
+
+        <div class="community-list">
+          <article class="community-item">
+            <a href="#">
+              <div class="comm-img">
+                <img src="img/comm-01.jpeg" alt="커뮤니티 글 1">
+              </div>
+              <p class="comm-title">커뮤니티 글 제목 1</p>
+            </a>
+          </article>
+          <article class="community-item">
+            <a href="#">
+              <div class="comm-img">
+                <img src="img/comm-02.jpeg" alt="커뮤니티 글 2">
+              </div>
+              <p class="comm-title">커뮤니티 글 제목 2</p>
+            </a>
+          </article>
+          <article class="community-item">
+            <a href="#">
+              <div class="comm-img">
+                <img src="img/comm-03.jpeg" alt="커뮤니티 글 3">
+              </div>
+              <p class="comm-title">커뮤니티 글 제목 3</p>
+            </a>
+          </article>
+          <article class="community-item">
+            <a href="#">
+              <div class="comm-img">
+                <img src="img/comm-04.jpeg" alt="커뮤니티 글 4">
+              </div>
+              <p class="comm-title">커뮤니티 글 제목 4</p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 배너 섹션 -->
+    <section id="banner">
+      <ul>
+        <li><a href="#">신선한 사료와 간식 - 유통기한 책임제 실시</a></li>
+        <li><a href="#">오후 5시 이전 주문 시 - 당일 도착</a></li>
+        <li><a href="#">3만원 이상 구매 시 - 무료 배송</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer id="footer">
+    <div class="inner-wrap">
+      <div class="footer-logo">
+        <img src="img/logo_ko.png" alt="CatHome">
+      </div>
+      <div class="footer-link">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+        <a href="#">입점 및 제휴 문의</a>
+        <a href="#">사이트맵</a>
+      </div>
+      <div class="footer-info">
+        <p>주소: 서울특별시 강남구 테헤란로 123</p>
+        <p>대표: 홍길동 | 사업자등록번호: 123-45-67890</p>
+        <p>Tel: 1234-5678 | Email: support@cathome.com</p>
+      </div>
+    </div>
+    <div class="sns">
+      <a href="#">페이스북</a>
+      <a href="#">인스타그램</a>
+      <a href="#">유튜브</a>
+    </div>
+  </footer>
+
+  <!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
