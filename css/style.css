@@ -348,6 +348,25 @@ input, textarea {
   margin-right: 5px;
 }
 
+/* 페이지네이션 dot */
+.swiper-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.swiper-dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.swiper-dot.active {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+
 /* ----------------------------------------
    카테고리 섹션 스타일
    ---------------------------------------- */
@@ -1194,6 +1213,33 @@ input, textarea {
   color: #fff;
 }
 
+.no-comments {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 20px;
+}
+
+/* 이미지 삭제 버튼 */
+#delete-image-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: var(--font-size-small);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#delete-image-btn:hover {
+  background-color: #c82333;
+}
+
+/* 사용자 정보 (헤더) */
+.user-info {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
 /* ----------------------------------------
    반응형 디자인 - 태블릿 (1199px 이하)
    ---------------------------------------- */
@@ -1390,27 +1436,152 @@ input, textarea {
 
   .board-search button {
     border-radius: 5px;
+    width: 100%;
   }
 
-  .board-list {
-    overflow-x: auto;
-  }
-
+  /* 게시판 테이블 → 카드 형식 */
   .board-list table {
-    min-width: 600px;
+    display: block;
   }
 
-  .post-meta {
-    flex-wrap: wrap;
+  .board-list thead {
+    display: none;
+  }
+
+  .board-list tbody {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   }
 
+  .board-list tr {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: var(--color-bg-gray);
+    border-radius: 8px;
+    border-bottom: none;
+  }
+
+  .board-list tr:hover {
+    background-color: var(--color-primary-lighter);
+  }
+
+  .board-list td {
+    padding: 5px 0;
+    text-align: left;
+    border-bottom: none;
+  }
+
+  .board-list td:nth-child(1) {
+    display: none;
+  }
+
+  .board-list td:nth-child(2) {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .board-list td:nth-child(2) a {
+    color: var(--color-text);
+  }
+
+  .board-list td:nth-child(3),
+  .board-list td:nth-child(4) {
+    display: inline;
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+  }
+
+  .board-list td:nth-child(3)::after {
+    content: ' · ';
+  }
+
+  .board-list td:nth-child(5),
+  .board-list td:nth-child(6) {
+    display: inline;
+    font-size: var(--font-size-small);
+    color: var(--color-text-lighter);
+  }
+
+  .board-list td:nth-child(5)::before {
+    content: '';
+    display: block;
+    margin-top: 5px;
+  }
+
+  .board-list td:nth-child(6)::before {
+    content: ' · 조회 ';
+  }
+
+  /* 글쓰기/상세 폼 */
+  #write-section .inner-wrap,
+  #detail-section .inner-wrap {
+    padding: 0 15px;
+  }
+
+  #post-form,
+  .post-detail,
+  .comment-section {
+    padding: 20px;
+  }
+
+  .post-header .post-title {
+    font-size: 20px;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .post-actions {
+    flex-wrap: wrap;
+  }
+
+  .btn-edit,
+  .btn-delete,
+  .btn-list {
+    flex: 1;
+    text-align: center;
+    padding: 12px 15px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-submit,
+  .btn-cancel {
+    width: 100%;
+  }
+
+  /* 댓글 */
   #comment-form {
     flex-direction: column;
   }
 
   #comment-form button {
     width: 100%;
+  }
+
+  .comment-section h3 {
+    font-size: 18px;
+  }
+
+  /* 페이지네이션 */
+  .pagination {
+    gap: 10px;
+  }
+
+  .pagination a {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .page-info {
+    font-size: 12px;
   }
 }
 
